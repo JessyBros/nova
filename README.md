@@ -1,4 +1,4 @@
-# Nova 
+# Nova
 Création d'une petite application pour enregistrer les informations relatives aux opérations
 
 ## Prérequis 
@@ -6,10 +6,12 @@ Création d'une petite application pour enregistrer les informations relatives a
 
 ## Mise en place de l'environnement
 Cloner le projet sur votre environnement de travail
-- <code>git clone https://github.com/JessyBros/nova.git</code>
+<pre><code>git clone https://github.com/JessyBros/nova.git</code></pre>
 
 Créer votre environnement de travail grâce à docker compose
-- <code>docker-compose up -d</code>
+<pre><code>docker-compose build
+docker-compose up -d
+</code></pre>
 
 ## Ouvrir votre projet sur votre navigateur
 
