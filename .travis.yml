@@ -8,9 +8,14 @@ services:
 
 before_install:
   - cd project/
+  - cp .env.travis .env
 
 install:
   - composer install
+
+before_script:
+  - php bin/console doctrine:database:create
+  - php bin/console doctrine:schema:create
 
 script:
   - vendor/bin/phpunit
