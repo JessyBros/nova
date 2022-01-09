@@ -3,5 +3,11 @@ language: php
 php:
   - '7.4'
 
+before_install:
+  - cd project/
+
+install:
+  - composer install
+
 script:
-  - project/vendor/bin/phpunit
+  - vendor/bin/phpunit
