@@ -2,3 +2,6 @@ language: php
 
 php:
   - '7.4'
+
+script:
+  - project/vendor/bin/phpunit
