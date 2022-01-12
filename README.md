@@ -15,7 +15,11 @@ docker-compose build
 docker-compose up -d
 </code></pre>
 
-### 3- Installer les librairies du projet avec composer
+### 3-Entrer dans le shell du conteneur docker pour utiliser les commandes
+<pre><code>docker exec -it www_docker_symfony bash</code></pre>
+
+### 4- Installer les librairies du projet avec composer
+<pre><code>cd project/</code></pre>
 <pre><code>composer install</code></pre>
 
 ### 4- Mise en place de la la base de donnée
