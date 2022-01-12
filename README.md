@@ -15,10 +15,14 @@ docker-compose build
 docker-compose up -d
 </code></pre>
 
-### 3- Installer les librairies du projet avec composer
+### 3-Entrer dans le shell du conteneur docker pour utiliser les commandes
+<pre><code>docker exec -it www_docker_symfony bash</code></pre>
+
+### 4- Installer les librairies du projet avec composer
+<pre><code>cd project/</code></pre>
 <pre><code>composer install</code></pre>
 
-### 4- Mise en place de la la base de donnée
+### 5- Mise en place de la la base de donnée
 #### Relié la base de donnée
 - Créer un fichier .env.local et y ajouter la connexion à votre base de donnée.
 <pre><code>DATABASE_URL="mysql://root:@db_docker_symfony:3306/db_nova?serverVersion=5.7</code></pre>
@@ -29,7 +33,7 @@ docker-compose up -d
 #### Ajouter les jeux de fausses données
 <pre><code>php bin/console doctrine:fixtures:load -n</code></pre>
 
-### 5- Relié le sevice Mailer
+### 6- Relié le sevice Mailer
 
 - Ouvrir le fichier .env.local et y ajouter votre Mailer.
 <pre><code>MAILER_DSN=smtp://maildev_docker_symfony:25</code></pre>
