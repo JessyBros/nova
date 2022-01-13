@@ -45,7 +45,7 @@ class SecurityControllerTest extends WebTestCase
 
         $crawler = $client->followRedirect();
 
-        $this->assertSelectorTextContains('a', 'Se déconnecter');
+        $this->assertSelectorTextContains('a.logout', 'Se déconnecter');
         $this->assertResponseIsSuccessful();
         
     }
