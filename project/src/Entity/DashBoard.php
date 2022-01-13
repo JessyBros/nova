@@ -23,13 +23,13 @@ class DashBoard
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="dashBoards")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="dashBoards")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=operation::class, inversedBy="dashBoards")
+     * @ORM\ManyToOne(targetEntity=Operation::class, inversedBy="dashBoards")
      * @ORM\JoinColumn(nullable=false)
      */
     private $operations;
