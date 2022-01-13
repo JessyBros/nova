@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeControllerTest extends WebTestCase
 {
-    public function testInscription(): void
+    public function testSomething(): void
     {
         // This calls KernelTestCase::bootKernel(), and creates a
         // "client" that is acting as the browser
@@ -15,19 +15,7 @@ class HomeControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertSelectorTextContains('h2', 'Inscription');
-
-        $crawler = $client->submitForm('Inscription', [
-            'registration_form[username]' => 'Fabien',
-            'registration_form[email]' => 'emraifl@gmail.com',
-            'registration_form[password][first]' => 'password',
-            'registration_form[password][second]' => 'password',
-        ]);
-
-        $crawler = $client->followRedirect();
-
-        $this->assertSelectorTextContains('div', 'Inscription réussi');
+        $this->assertSelectorTextContains('h1', 'Nova Project');
         $this->assertResponseIsSuccessful();
-        
     }
 }

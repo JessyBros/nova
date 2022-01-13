@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nova - Gestion des opérations{% endblock %}
+
+{% block body %}
+
+<h2>Inscription</h2>
+
+{{ form_start(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    <input type="submit" value="Inscription"/>
+{{ form_end(form) }}
+
+{% endblock %}
