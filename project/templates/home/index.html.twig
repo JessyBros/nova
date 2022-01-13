@@ -6,6 +6,8 @@
 
     {% if not app.user %}
         {% include 'security/_login.html.twig' %}
+    {% else %}
+        <a href="{{path('logout')}}">Se déconnecter</a>
     {% endif %}
 
 {% endblock %}
