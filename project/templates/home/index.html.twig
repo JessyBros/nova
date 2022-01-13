@@ -4,4 +4,8 @@
 
 {% block body %}
 
+    {% if not app.user %}
+        {% include 'security/_login.html.twig' %}
+    {% endif %}
+
 {% endblock %}

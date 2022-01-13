@@ -15,7 +15,15 @@
     </head>
     <body>
     
-        <h1>Nova Project</h1>
+        <h1><a href="{{path('home')}}">Nova Project</a></h1>
+        
+        <nav>
+            {% if not app.user %}
+                <a href="{{path('registration')}}">S'inscrire</a>
+            {% else %}
+                <a class="logout" href="{{path('logout')}}">Se déconnecter</a>
+            {% endif %}
+        </nav>
 
         {% for label, messages in app.flashes(['success', 'warning']) %}
             {% for message in messages %}
