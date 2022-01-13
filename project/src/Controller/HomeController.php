@@ -31,6 +31,9 @@ class HomeController extends AbstractController
 
             $em->persist($user);
             $em->flush();
+            
+            $this->addFlash('success', 'Inscription réussi');
+            return $this->redirectToRoute('home');
         }
 
 
