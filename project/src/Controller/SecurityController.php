@@ -18,23 +18,22 @@ class SecurityController extends AbstractController
      */
     public function registration(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {
-        $user = new User;
+        $user = new User();
 
         $formRegistration = $this->createForm(RegistrationFormType::class, $user);
         $formRegistration->handleRequest($request);
 
-        if ($formRegistration->isSubmitted() && $formRegistration->isValid()){
-            $hashedPassword = $passwordHasher->hashPassword($user,$formRegistration->getData()->getPassword());
+        if ($formRegistration->isSubmitted() && $formRegistration->isValid()) {
+            $hashedPassword = $passwordHasher->hashPassword($user, $formRegistration->getData()->getPassword());
             $user->setPassword($hashedPassword);
             $em->persist($user);
             $em->flush();
             $this->addFlash('success', 'Inscription réussi');
+
             return $this->redirectToRoute('home');
         }
 
-
-
-        return $this->render('security/registration.html.twig',[
+        return $this->render('security/registration.html.twig', [
             'form' => $formRegistration->createView(),
         ]);
     }
