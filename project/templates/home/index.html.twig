@@ -4,21 +4,4 @@
 
 {% block body %}
 
-<h1>Nova Project</h1>
-{% for label, messages in app.flashes(['success', 'warning']) %}
-    {% for message in messages %}
-        <div class="flash-{{ label }}">
-            {{ message }}
-        </div>
-    {% endfor %}
-{% endfor %}
-
-<h2>Inscription</h2>
-
-{{ form_start(form) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.password) }}
-    <input type="submit" value="Inscription"/>
-{{ form_end(form) }}
 {% endblock %}
